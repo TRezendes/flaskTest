@@ -1,0 +1,18 @@
+{% extends "base.jhtml" %}
+{% block title %}Testing for Luciano Oliveria{% endblock %}
+{% block content %}
+  <table>
+    {% for item in cart%}
+      {% set item_obj=cart[item] %}
+      {% set itemID=item_obj['id'] %}
+      {{ item_obj['name'] }}
+      <tr onclick="window.location.href='{{ url_for('luciano.item_detail', itemID=itemID) }}';">
+        <td>
+          <img src="https://s1.piq.land/2014/03/26/VGcfshf550HOl4licSajjX9c_400x400.png" class="rounded-circle" width="100" height="100" object-fit="cover" alt="product img">
+        </td>
+        <td>{{ item['name'] }}</td>
+        <td>{{ exampleFunction(item_obj['id']) }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

@@ -1,0 +1,5 @@
+{
+    "FLASK_APP": "test_app",
+    "SECRET_KEY": "",
+    "SERVER_NAME": ""
+}

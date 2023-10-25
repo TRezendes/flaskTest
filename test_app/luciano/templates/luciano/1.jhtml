@@ -1,0 +1,6 @@
+{% extends "base.jhtml" %}
+{% block title %}Item 1 - {{ cart['items']['item1']['name'] }}{% endblock %}
+{% block content %}
+    <h1>Item 1</h1>
+    <p>This is information about Item 1<br />Item 1 is called {{ cart['items']['item1']['name'] }}</p>
+{% endblock %}
