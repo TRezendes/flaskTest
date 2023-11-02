@@ -15,4 +15,12 @@
       </tr>
     {% endfor %}
   </table>
+  <div class="centered">
+    In this paragraph, we use the foo function, which was imported to routes.py. <br />
+    {{ foo('Foo Input') }}
+  </div>
+  <div class="centered">
+    In this paragraph, we use the bar function, which was defined in routes.py. <br />
+    {{ bar('Bar Input') }}
+  </div>
 {% endblock %}

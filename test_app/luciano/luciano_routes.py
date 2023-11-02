@@ -1,5 +1,6 @@
 from flask import Blueprint, current_app, flash, redirect, render_template, request, session, url_for
 from . import luciano
+from .abc import foo
 
 
 cart = {
@@ -22,16 +23,23 @@ cart = {
     }
 
 
-# def exampleFunction(itemID):
-#     return 'test correct' + str(itemID)
+""" luciano
+The function definitions below expand on the original answer to Luciano's question by showing how to pass functions to individual templates.
+See ../__init__.py for the link to the question and answer.
+"""
 
+
+def bar(input):
+    stringBAR = f"The input to the bar function was: {input}"
+    return stringBAR
 
 @luciano.route('/home')
 def home():
     return render_template(
         '/luciano/home.jhtml',
-        cart=cart#,
-        #exampleFunction=exampleFunction
+        cart=cart,
+        foo=foo,
+        bar=bar
         )
 
 @luciano.route('item-detail/<itemID>')

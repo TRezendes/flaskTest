@@ -9,11 +9,11 @@ def create_app():
     app = Flask(__name__, subdomain_matching=True)
 
     uwllpt17800_config_path = 'C:\\Users\\trezendes\\projects\\flaskTest\\config.json'
-    titan_config_path = '~/Projects/flaskTest/config.json'
+    titan_config_path = '/Volumes/Macintosh HD/Users/trezendes/Projects/flaskTest/config.json'
 
     with open(
-        uwllpt17800_config_path
-        #titan_config_path
+        #uwllpt17800_config_path
+        titan_config_path
     ) as config_file:
         config = json.load(config_file)
 
@@ -32,7 +32,7 @@ def create_app():
     @app.template_global('RikerIpsum')
     def riker_ipsum(sentences):
         return RikerIpsum(sentences)
-    
+
     """ luciano
     Content in this section is for StackOverflow question https://stackoverflow.com/questions/77358658/python-flask-is-it-possible-to-get-string-from-a-function-in-views-py-to-a-td
     (Blueprint 'luciano')
